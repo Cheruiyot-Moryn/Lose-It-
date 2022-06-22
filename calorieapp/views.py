@@ -62,48 +62,48 @@ def RegisterPage(request):
 		context = {'form':form}
 		return render(request,'register.html',context)
 
-# #login page
-# def LoginPage(request):
-# 	if request.user.is_authenticated:
-# 		return redirect('home')
-# 	else:
+#login page
+def LoginPage(request):
+	if request.user.is_authenticated:
+		return redirect('home')
+	else:
 
-# 		if request.method == 'POST':
-# 			username = request.POST.get('username')
-# 			password = request.POST.get('password')
-# 			user = authenticate(request,username=username,password=password)
-# 			if user is not None:
-# 				login(request,user)
-# 				return redirect('home')
-# 			else:
-# 				messages.info(request,'Username or password is incorrect')
-# 		context = {}
-# 		return render(request,'login.html',context)
+		if request.method == 'POST':
+			username = request.POST.get('username')
+			password = request.POST.get('password')
+			user = authenticate(request,username=username,password=password)
+			if user is not None:
+				login(request,user)
+				return redirect('home')
+			else:
+				messages.info(request,'Username or password is incorrect')
+		context = {}
+		return render(request,'login.html',context)
 
-# #logout page
-# def LogOutPage(request):
-# 	logout(request)
-# 	return redirect('login')
+#logout page
+def LogOutPage(request):
+	logout(request)
+	return redirect('login')
 
-# #for selecting food each day
-# @login_required
-# def select_food(request):
-# 	person = Profile.objects.filter(person_of=request.user).last()
-# 	#for showing all food items available
-# 	food_items = Food.objects.filter(person_of=request.user)
-# 	form = SelectFoodForm(request.user,instance=person)
+#for selecting food each day
+@login_required
+def select_food(request):
+	person = Profile.objects.filter(person_of=request.user).last()
+	#for showing all food items available
+	food_items = Food.objects.filter(person_of=request.user)
+	form = SelectFoodForm(request.user,instance=person)
 
-# 	if request.method == 'POST':
-# 		form = SelectFoodForm(request.user,request.POST,instance=person)
-# 		if form.is_valid():
+	if request.method == 'POST':
+		form = SelectFoodForm(request.user,request.POST,instance=person)
+		if form.is_valid():
 			
-# 			form.save()
-# 			return redirect('home')
-# 	else:
-# 		form = SelectFoodForm(request.user)
+			form.save()
+			return redirect('home')
+	else:
+		form = SelectFoodForm(request.user)
 
-# 	context = {'form':form,'food_items':food_items}
-# 	return render(request, 'select_food.html',context)
+	context = {'form':form,'food_items':food_items}
+	return render(request, 'select_food.html',context)
 
 # #for adding new food
 # def add_food(request):
