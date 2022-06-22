@@ -45,22 +45,22 @@ def HomePageView(request):
 
 	return render(request, 'home.html',context)
 
-# #signup page
-# def RegisterPage(request):
-# 	if request.user.is_authenticated:
-# 		return redirect('home')
-# 	else:
-# 		form = CreateUserForm()
-# 		if request.method == 'POST':
-# 			form = CreateUserForm(request.POST)
-# 			if form.is_valid():
-# 				form.save()
-# 				user = form.cleaned_data.get('username')
-# 				messages.success(request,"Account was created for "+ user)
-# 				return redirect('login')
+#signup page
+def RegisterPage(request):
+	if request.user.is_authenticated:
+		return redirect('home')
+	else:
+		form = CreateUserForm()
+		if request.method == 'POST':
+			form = CreateUserForm(request.POST)
+			if form.is_valid():
+				form.save()
+				user = form.cleaned_data.get('username')
+				messages.success(request,"Account was created for "+ user)
+				return redirect('login')
 
-# 		context = {'form':form}
-# 		return render(request,'register.html',context)
+		context = {'form':form}
+		return render(request,'register.html',context)
 
 # #login page
 # def LoginPage(request):
