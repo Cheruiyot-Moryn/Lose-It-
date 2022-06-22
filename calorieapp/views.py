@@ -152,25 +152,25 @@ def delete_food(request,pk):
 	context = {'food':food_item,}
 	return render(request,'delete_food.html',context)
 
-# #profile page of user
-# @login_required
-# def ProfilePage(request):
-# 	#getting the lastest profile object for the user
-# 	person = Profile.objects.filter(person_of=request.user).last()
-# 	food_items = Food.objects.filter(person_of=request.user)
-# 	form = ProfileForm(instance=person)
+#profile page of user
+@login_required
+def ProfilePage(request):
+	#getting the lastest profile object for the user
+	person = Profile.objects.filter(person_of=request.user).last()
+	food_items = Food.objects.filter(person_of=request.user)
+	form = ProfileForm(instance=person)
 
-# 	if request.method == 'POST':
-# 		form = ProfileForm(request.POST,instance=person)
-# 		if form.is_valid():	
-# 			form.save()
-# 			return redirect('profile')
-# 	else:
-# 		form = ProfileForm(instance=person)
+	if request.method == 'POST':
+		form = ProfileForm(request.POST,instance=person)
+		if form.is_valid():	
+			form.save()
+			return redirect('profile')
+	else:
+		form = ProfileForm(instance=person)
 
-# 	#querying all records for the last seven days 
-# 	some_day_last_week = timezone.now().date() -timedelta(days=7)
-# 	records=Profile.objects.filter(date__gte=some_day_last_week,date__lt=timezone.now().date(),person_of=request.user)
+	#querying all records for the last seven days 
+	some_day_last_week = timezone.now().date() -timedelta(days=7)
+	records=Profile.objects.filter(date__gte=some_day_last_week,date__lt=timezone.now().date(),person_of=request.user)
 
-# 	context = {'form':form,'food_items':food_items,'records':records}
-# 	return render(request, 'profile.html',context)
+	context = {'form':form,'food_items':food_items,'records':records}
+	return render(request, 'profile.html',context)
