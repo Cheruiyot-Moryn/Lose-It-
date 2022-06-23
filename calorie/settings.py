@@ -26,7 +26,7 @@ cloudinary.config(
   api_secret = 'B5yz7aK_OI0Muj53qfMg67SaHds'
 )
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
