@@ -1,3 +1,4 @@
+from django.forms import DateField
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
@@ -16,12 +17,16 @@ def HomePageView(request):
 
 	#taking the latest profile object
 	calories = Profile.objects.filter(person_of=request.user).last()
-	calorie_goal = calories.calorie_goal
-	
+	calorie_goal = Profile.calorie_goal
+		
+	print(date.today())
+	# print(Profile.date())
+	todaysdate=datetime.now()
+	# profiledate=Profile.date()
 	#creating one profile each day
-	if date.today() > calories.date:
-		profile=Profile.objects.create(person_of=request.user)
-		profile.save()
+	# if todaysdate > profiledate:
+	profile=Profile.objects.create(person_of=request.user)
+	profile.save()
 
 	calories = Profile.objects.filter(person_of=request.user).last()
 		
@@ -29,7 +34,7 @@ def HomePageView(request):
 
 	all_food_today=PostFood.objects.filter(profile=calories)
 	
-	calorie_goal_status = calorie_goal -calories.total_calorie
+	calorie_goal_status = calorie_goal - Profile.total_calorie
 	over_calorie = 0
 	if calorie_goal_status < 0 :
 		over_calorie = abs(calorie_goal_status)
@@ -41,8 +46,6 @@ def HomePageView(request):
 	'over_calorie' : over_calorie,
 	'food_selected_today':all_food_today
 	}
-	
-
 	return render(request, 'home.html',context)
 
 #signup page
