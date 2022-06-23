@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Grandstander&family=Ubuntu:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans+Condensed:wght@700&family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inconsolata:wght@300&family=Indie+Flower&family=Libre+Baskerville&family=Nuosu+SIL&family=Roboto+Mono:ital,wght@1,300&family=Shadows+Into+Light&display=swap');
 a {
   text-decoration:none !important;
 }
 .logo {
-  font-family: 'Lobster', cursive;
+  font-family: 'Shadows Into Light', cursive;
   padding-top:0px;
   padding-bottom:12px;
   font-size: 60px;
@@ -22,7 +16,7 @@ a {
 #navbar-primary.navbar-default .navbar-nav {
   width: 100%;
   text-align: center;
-background: #d85622;  /* fallback for old browsers */
+background: #d85622;  
 background: -webkit-linear-gradient(to right, #d86b2c, #d85622);  
 background: linear-gradient(to right, #d86b2c, #d85622); 
 
@@ -34,7 +28,7 @@ background: linear-gradient(to right, #d86b2c, #d85622);
   vertical-align: top;
   padding-top: 8px;
   padding-bottom: 8px;
-  font-family: 'Grandstander', cursive
+  font-family: 'Roboto Mono', monospace;
 
 }
 #navbar-primary.navbar-default .navbar-nav > li > a {
@@ -110,14 +104,14 @@ transition: border .5s;
 }
 
 input:focus {
-border: 2px solid #3498DB;
+border: 2px solid #db5b34;
 box-shadow: none;
 }
 
 .btn {
-background: #457fca; 
-background: -webkit-linear-gradient(to right, #5691c8, #457fca);  
-background: linear-gradient(to right, #5691c8, #457fca); 
+    color: #db521c;  
+    color: -webkit-linear-gradient(to right, #e0400f, #db521c);  
+    color: linear-gradient(to right, #e0400f, #db521c);  
 
 
   color: white !important;
@@ -135,7 +129,7 @@ background: linear-gradient(to right, #5691c8, #457fca);
 }
 
 .btn:hover {
-  background-color: #2980B9;
+  background-color: #b97b29;
 }
 
 .login-link {
@@ -146,7 +140,7 @@ background: linear-gradient(to right, #5691c8, #457fca);
 }
 
 #username {
-font-family: 'Pacifico', cursive;
+font-family: 'Indie Flower', cursive;
 padding-top:0px;
 padding-bottom:30px;
 }
@@ -155,7 +149,6 @@ padding-bottom:30px;
   font-size: 20px;
 }
 
-
 .item{
   padding-left:5px;
   padding-right:5px;
@@ -163,9 +156,9 @@ padding-bottom:30px;
 }
 .card {
 
-background: #457fca; 
-background: -webkit-linear-gradient(to right, #5691c8, #457fca);
-background: linear-gradient(to right, #5691c8, #457fca);
+    color: #db521c;  
+    color: -webkit-linear-gradient(to right, #e0400f, #db521c);  
+    color: linear-gradient(to right, #e0400f, #db521c); 
 
  color:white;
 
@@ -231,24 +224,22 @@ background: linear-gradient(to right, #5691c8, #457fca);
 }
 
 th{
-background: #1e3c72;  
-background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
-background: linear-gradient(to right, #2a5298, #1e3c72);
-
-
+color: #db521c;  
+color: -webkit-linear-gradient(to right, #e0400f, #db521c);  
+color: linear-gradient(to right, #e0400f, #db521c); 
 }
 
 .card{
-  font-family: 'Grandstander', cursive;
-font-family: 'Ubuntu', sans-serif;
+font-family: 'Indie Flower', cursive;
+font-family: 'Dancing Script', cursive;
 }
 
 .headline {
-  font-family: 'Permanent Marker', cursive;
-  padding-top:20px;
- color: #2193b0; 
-color:  -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  
-color:  linear-gradient(to right, #6dd5ed, #2193b0); 
+font-family: 'Inconsolata', monospace;
+padding-top:20px;
+color: #b04e21; 
+color:  -webkit-linear-gradient(to right, #edab6d, #b05521);  
+color:  linear-gradient(to right, #edab6d, #b05521); 
 
 }
 .profile-text {
@@ -259,24 +250,24 @@ color:  linear-gradient(to right, #6dd5ed, #2193b0);
 
 .table {
     background-color: white;
-    color: #18AD7C;
+    color: #ad1818;
 }
 table.table-bordered > thead > tr > th {
-  border:1px solid #1e3c72;
+  border:1px solid #721e1e;
 }
 table.table-bordered > tbody > tr > td {
-  border:1px solid #1e3c72;
+  border:1px solid #721e1e;
 }
 
 .profile-submit {
-background: #457fca;
-background: -webkit-linear-gradient(to bottom, #5691c8, #457fca);  
-background: linear-gradient(to bottom, #5691c8, #457fca); 
+background: #db521c;
+background: -webkit-linear-gradient(to bottom, #e0400f, #db521c);  
+background: linear-gradient(to bottom, #e0400f, #db521c); 
 }
 
 .form-labels {
-  font-family: 'Titillium Web', sans-serif;
-  color:#457fca;
+font-family: 'Nuosu SIL', serif;
+color:#e0400f;
 
 }
 
